@@ -39,6 +39,15 @@ Route::get('/', function (Request $request) {
 
                 return $tolKeluar;
             })
+            ->editColumn('price', function ($row) {
+                if ($row->tolIn == '32:AE:A4:07:0D:66') {
+                    $price = 8000;
+                } else {
+                    $price = 5000;
+                }
+
+                return $price;
+            })
             ->addColumn('user', function($row){
 
                 if ($row->beacon == "df:05:94:2a:05:e7/" || $row->beacon == "df:05:94:2a:05:e7") {
