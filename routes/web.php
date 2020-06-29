@@ -23,11 +23,20 @@ Route::get('/', function (Request $request) {
         return Datatables::of($data)
             ->addIndexColumn()
             ->addColumn('tolMasuk', function($row){
-                $tolMasuk = 'Sidoarjo';
+                if ($row->tolIn == '32:AE:A4:07:0D:66') {
+                    $tolMasuk = 'Surabaya';
+                } else {
+                    $tolMasuk = 'Sidoarjo';
+                }
                 return $tolMasuk;
             })
             ->addColumn('tolKeluar', function($row){
-                $tolKeluar = 'Waru';
+                if ($row->tolIn == '32:AE:A4:07:0D:66') {
+                    $tolKeluar = 'Gresik';
+                } else {
+                    $tolKeluar = 'Waru';
+                }
+
                 return $tolKeluar;
             })
             ->addColumn('user', function($row){
