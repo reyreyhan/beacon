@@ -50,7 +50,7 @@ Route::get('/', function (Request $request) {
             })
             ->addColumn('user', function($row){
 
-                if ($row->beacon == "df:05:94:2a:05:e7/" || $row->beacon == "df:05:94:2a:05:e7") {
+                if ($row->beacon == "ac:23:3f:23:5a:e0/" || $row->beacon == "ac:23:3f:23:5a:e0") {
                     $user = 'Titis Jiyan';
                 } else if ($row->beacon == "ac:23:3f:24:9f:b5/" || $row->beacon == "ac:23:3f:24:9f:b5") {
                     $user = 'Reyhan Alphard';
