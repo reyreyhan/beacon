@@ -52,8 +52,10 @@ Route::get('/', function (Request $request) {
 
                 if ($row->beacon == "df:05:94:2a:05:e7/" || $row->beacon == "df:05:94:2a:05:e7") {
                     $user = 'Titis Jiyan';
-                } else {
+                } else if ($row->beacon == "ac:23:3f:24:9f:b5/" || $row->beacon == "ac:23:3f:24:9f:b5") {
                     $user = 'Reyhan Alphard';
+                } else {
+                    $user = 'Ki Suki';
                 }
 
                 return $user;
